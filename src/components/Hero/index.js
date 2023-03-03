@@ -5,7 +5,7 @@ import { TbBrandJavascript, TbBrandNextjs } from "react-icons/tb";
 import { DiNodejs, DiMongodb, DiPython } from "react-icons/di";
 import { zoomIn } from "react-animations";
 import styled, { keyframes } from "styled-components";
-import { Header } from '../Header/index';
+import { Header } from "../Header/index";
 
 const heroImageSrc = "/images/hero-image.jpg";
 const myPhoto = "/images/my-photo.png";
@@ -34,9 +34,7 @@ const Herocomponent = () => {
           bg: "gray",
           height: "50vh",
         }}
-      >
-        <Header />
-      </Box>
+      ></Box>
       <Container
         component={Paper}
         sx={{
