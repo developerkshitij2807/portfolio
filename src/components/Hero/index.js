@@ -5,20 +5,12 @@ import { TbBrandJavascript, TbBrandNextjs } from "react-icons/tb";
 import { DiNodejs, DiMongodb, DiPython } from "react-icons/di";
 import { zoomIn } from "react-animations";
 import styled, { keyframes } from "styled-components";
-import { Header } from "../Header/index";
 
 const heroImageSrc = "/images/hero-image.jpg";
 const myPhoto = "/images/my-photo.png";
 
 const Herocomponent = () => {
-  const SkillsIcons = [
-    TbBrandJavascript,
-    FaReact,
-    DiNodejs,
-    DiMongodb,
-    TbBrandNextjs,
-    DiPython,
-  ];
+ 
   const zoomInAnimation = keyframes`${zoomIn}`;
 
   const ZoomInComponent = styled(Grid)`
@@ -75,32 +67,15 @@ const Herocomponent = () => {
               Kshitij Dutt
             </Typography>
           </Grid>
-          <Grid item xs={12} sx={{ display: "flex", justifyContent: "center" }}>
-            <Typography variant="h5" sx={{ fontWeight: 300 }}>
-              Software Devloper
-            </Typography>
-          </Grid>
 
           <Grid
             item
             xs={12}
-            sx={{ display: "flex", justifyContent: "center", marginTop: 2 }}
+            sx={{ display: "flex", justifyContent: "center",  }}
           >
-            <Typography variant="h4" sx={{ fontWeight: 300, margin: 5 }}>
-              Professional Skills
+            <Typography variant="h5" sx={{ fontWeight: 300, margin: 5, textTransform: "capitalize" }}>
+              I am a full stack javascript developer from Ghaziabad, India. I have Experience in working with ReactJS and NodeJS. I have excellent problem solving skills. I have made open source contributions on github. I also have a youtube channel where I post teaching tutorials technology. My Hobbies include Sports, Electronics, Excercising, Cooking and Video Editing
             </Typography>
-          </Grid>
-          <Grid container sx={{ marginX: 25 }} spacing={2}>
-            {SkillsIcons.map((SkillIcon, index) => (
-              <ZoomInComponent
-                item
-                xs={4}
-                key={index}
-                sx={{ display: "flex", justifyContent: "center" }}
-              >
-                <SkillIcon size={100} />
-              </ZoomInComponent>
-            ))}
           </Grid>
         </Grid>
       </Container>
