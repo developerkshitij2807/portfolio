@@ -1,28 +1,58 @@
-import { AppBar, Toolbar } from "@mui/material";
+import { headerStyles } from "@/styles/header";
+import { Box, Grid } from "@mui/material";
+import HeaderItem from "./HeaderItem";
 
-export const Header = () => {
+const HeaderLayout = (props) => {
+  const { children } = props;
   return (
-    <AppBar
+    <Box
+      component="header"
       sx={{
-        display: "flex",
-        border: "0",
-        borderRadius: "3px",
-        padding: "0.625rem 0",
-        marginBottom: "20px",
-        color: "#555",
-        width: "100%",
-        backgroundColor: "#fff",
-        boxShadow:
-          "0 4px 18px 0px rgba(0, 0, 0, 0.12), 0 7px 10px -5px rgba(0, 0, 0, 0.15)",
-        transition: "all 150ms ease 0s",
-        alignItems: "center",
-        flexFlow: "row nowrap",
-        justifyContent: "flex-start",
-        position: "relative",
-        zIndex: "unset",
+        paddingX: 30,
+        paddingY: 5,
       }}
     >
-      <Toolbar></Toolbar>
-    </AppBar>
+      {children}
+    </Box>
   );
 };
+
+const TransparentHeader = (props) => {
+  const { headerData } = props;
+  return (
+    <HeaderLayout>
+      <Grid container>
+        {headerData.map((headerItem) => (
+          <HeaderItem
+            text={headerItem.name}
+            gridSpace={headerItem.gridSpace}
+            style={headerStyles.transparentHeaderItem}
+            href={headerItem.href}
+          />
+        ))}
+      </Grid>
+    </HeaderLayout>
+  );
+};
+
+export const Header = (props) => {
+  const { bgTransparent } = props;
+  const headerItems = [
+    {
+      name: "Home",
+      href: "/",
+      gridSpace: 6,
+    },
+    {
+      name: "About",
+      href: "/about",
+      gridSpace: 1,
+    },
+  ];
+  if (bgTransparent) {
+    return <TransparentHeader headerData={headerItems} />;
+  } else {
+    return <></>;
+  }
+};
+

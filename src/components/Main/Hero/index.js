@@ -1,8 +1,10 @@
 import { Box } from "@mui/material";
 
 const Herosection = (props) => {
-  const {styles} = props ;
-  return <Box sx={ styles } />;
+  const { styles,children } = props;
+  return (
+    <Box sx={styles}>{children}</Box>
+  );
 };
 
 export default Herosection;

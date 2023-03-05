@@ -35,8 +35,8 @@ export const mainStyles = {
     summaryGridItem: { display: "flex", justifyContent: "center" },
     summaryTypography: {
       fontWeight: 300,
-      margin: 5,
-      textTransform: "capitalize",
+      marginX: 10,
+      marginY: 5
     },
   },
 };
