@@ -3,14 +3,18 @@ import { Box, Grid } from "@mui/material";
 import HeaderItem from "./HeaderItem";
 
 const HeaderLayout = (props) => {
-  const { children } = props;
+  const { children, ...styleProps } = props;
   return (
     <Box
       component="header"
-      sx={{
-        paddingX: 30,
-        paddingY: 5,
-      }}
+      sx={[
+        styleProps.sx,
+        {
+          paddingX: 30,
+          paddingY: 5,
+          display: { xs: "none", sm: "block" },
+        },
+      ]}
     >
       {children}
     </Box>
@@ -21,6 +25,24 @@ const TransparentHeader = (props) => {
   const { headerData } = props;
   return (
     <HeaderLayout>
+      <Grid container>
+        {headerData.map((headerItem) => (
+          <HeaderItem
+            text={headerItem.name}
+            gridSpace={headerItem.gridSpace}
+            style={headerStyles.transparentHeaderItem}
+            href={headerItem.href}
+          />
+        ))}
+      </Grid>
+    </HeaderLayout>
+  );
+};
+
+const NormalHeader = (props) => {
+  const { headerData } = props;
+  return (
+    <HeaderLayout sx={{ backgroundColor: "black", position: "sticky", top: 0 }}>
       <Grid container>
         {headerData.map((headerItem) => (
           <HeaderItem
@@ -52,7 +74,6 @@ export const Header = (props) => {
   if (bgTransparent) {
     return <TransparentHeader headerData={headerItems} />;
   } else {
-    return <></>;
+    return <NormalHeader headerData={headerItems} />;
   }
 };
-
