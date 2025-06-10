@@ -237,6 +237,22 @@ const bigProjects = {
           url: "https://auroscholar.org/"
         }
       ]
+    },
+    {
+      image: require("./"),
+      projectName: "Cricket Auction Game",
+      projectDesc: `Cricket Auction Game using:
+                      Next.js (Frontend + Backend via API routes)
+                      MongoDB (via Mongoose)
+                      GraphQL (Apollo Server & Client)
+                      Material UI (MUI)
+                      Fully responsive design.`,
+      footerLink: [
+        {
+          name: "Visit Website",
+          url: "https://cricket-auction-game.vercel.app/"
+        }
+      ]
     }
   ],
   display: true // Set false to hide this section, defaults to true
