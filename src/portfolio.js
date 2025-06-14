@@ -216,6 +216,17 @@ const bigProjects = {
   subtitle: "SOME ORGANIZATIONS AND COMPANIES THAT I HELPED TO CREATE THEIR TECH",
   projects: [
     {
+      image: require("./assets/images/cricflixLogo.png"),
+      projectName: "Cricflix",
+      projectDesc: `CricFlix is a dynamic catalogue-style web application built using Next.js, TypeScript, MongoDB, and GraphQL, designed to showcase and organize cricket content including Live Match Clips, Player Highlights, Match Highlights, Documentaries, and Movies. Users can explore high-quality cricket videos with rich thumbnails and smooth navigation via a responsive UI built with Material UI. The platform integrates with a public Telegram channel for hosting large video content, ensuring free and scalable delivery. With features like category-based navigation, embedded Telegram playback, and a modern Netflix-style interface, CricFlix serves as a high-impact portfolio piece demonstrating both frontend finesse and backend integration.`,
+      footerLink: [
+        {
+          name: "Visit Website",
+          url: "https://cricflix-five.vercel.app/"
+        }
+      ]
+    },
+    {
       image: require("./assets/images/scaleAILogo.png"),
       projectName: "Scale AI React",
       projectDesc: "Scale AI is a San Francisco-based artificial intelligence company that specializes in providing high-quality training data and model evaluation services to accelerate the development of AI applications. Founded in 2016 by Alexandr Wang and Lucy Guo, the company has become a key player in the AI industry, serving clients across various sectors, including technology, automotive, and government.",
@@ -238,22 +249,6 @@ const bigProjects = {
         }
       ]
     },
-    {
-      image: require("./"),
-      projectName: "Cricket Auction Game",
-      projectDesc: `Cricket Auction Game using:
-                      Next.js (Frontend + Backend via API routes)
-                      MongoDB (via Mongoose)
-                      GraphQL (Apollo Server & Client)
-                      Material UI (MUI)
-                      Fully responsive design.`,
-      footerLink: [
-        {
-          name: "Visit Website",
-          url: "https://cricket-auction-game.vercel.app/"
-        }
-      ]
-    }
   ],
   display: true // Set false to hide this section, defaults to true
 };
